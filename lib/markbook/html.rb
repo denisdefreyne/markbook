@@ -1,17 +1,4 @@
-require 'rouge'
-
 module MarkBook
-  # TODO: move elsewhere
-  class DMarkRougeLexer < Rouge::RegexLexer
-    tag 'd-mark'
-    filenames '*.dmark'
-
-    state :root do
-      rule /^(  )*#[a-z][a-z0-9]*/, Name::Tag
-      rule /%[a-z][a-z0-9]*/, Name::Tag
-    end
-  end
-
   class HTML < DMark::Translator
     def handle_string(string, _context)
       [html_escape(string)]
