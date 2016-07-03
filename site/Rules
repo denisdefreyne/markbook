@@ -1,0 +1,19 @@
+#!/usr/bin/env ruby
+
+compile '/**/*.dmark' do
+  filter :markbook2html
+  layout '/default.*'
+  filter :relativize_paths, type: :html
+end
+
+route '/index.*' do
+  '/index.html'
+end
+
+route '/**/*.dmark' do
+  item.identifier.without_ext + '/index.html'
+end
+
+passthrough '/stylesheet.css'
+
+layout '/**/*', :erb

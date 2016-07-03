@@ -1,0 +1,9 @@
+= MarkBook
+Denis Defreyne <denis@stoneship.org>
+
+image:http://img.shields.io/gem/v/markbook.svg[Gem version, link="http://rubygems.org/gems/markbook"]
+image:http://img.shields.io/travis/ddfreyne/markbook.svg[Build status, link="https://travis-ci.org/ddfreyne/markbook"]
+image:http://img.shields.io/codeclimate/github/ddfreyne/markbook.svg[Code Climate, link="https://codeclimate.com/github/ddfreyne/markbook"]
+image:http://img.shields.io/codecov/c/github/ddfreyne/markbook.svg[Code Coverage, link="https://codecov.io/github/ddfreyne/markbook"]
+
+_MarkBook_ is a vocabulary for _D★Mark_ for general technical writing.

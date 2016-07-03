@@ -1,0 +1,16 @@
+language: ruby
+rvm:
+  - 2.2.2
+  - 2.3.0
+  - ruby-head
+env:
+  - CODECOV_TOKEN=WRONG
+branches:
+  only:
+    - "master"
+    - "/^release-/"
+before_install: gem install bundler
+cache: bundler
+sudo: false
+git:
+  depth: 1

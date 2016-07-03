@@ -1,0 +1,45 @@
+PATH
+  remote: ..
+  specs:
+    markbook (0.1)
+      d-mark (= 1.0.0a3)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    adsf (1.2.1)
+      rack (>= 1.0.0)
+    colored (1.2)
+    concurrent-ruby (1.0.2)
+    cri (2.7.0)
+      colored (~> 1.2)
+    d-mark (1.0.0a3)
+    hamster (3.0.0)
+      concurrent-ruby (~> 1.0)
+    mini_portile2 (2.1.0)
+    nanoc (4.2.3)
+      cri (~> 2.3)
+      hamster (~> 3.0)
+    nanoc-git (1.0.1)
+      nanoc (>= 3.7.0, < 5.0.0)
+    nokogiri (1.6.8)
+      mini_portile2 (~> 2.1.0)
+      pkg-config (~> 1.1.7)
+    pkg-config (1.1.7)
+    rack (2.0.1)
+    rouge (2.0.2)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  adsf
+  d-mark (~> 1.0.0a3)
+  markbook!
+  nanoc (~> 4.1)
+  nanoc-git (~> 1.0)
+  nokogiri
+  rouge
+
+BUNDLED WITH
+   1.12.5
