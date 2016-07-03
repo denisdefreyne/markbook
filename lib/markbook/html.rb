@@ -71,6 +71,7 @@ module MarkBook
     end
 
     def id_for_section(element)
+      # FIXME: handle case where no header exists
       id_for_header(element.children.find { |c| c.name == 'h' })
     end
 
