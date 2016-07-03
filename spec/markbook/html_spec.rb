@@ -126,4 +126,12 @@ describe MarkBook::HTML do
       it { is_expected.to eql("<pre><code>def foo\n  123\nend</code></pre>") }
     end
   end
+
+  describe 'other element' do
+    let(:content) { '#aksjdflkasdf stuff' }
+
+    it 'raises' do
+      expect { subject }.to raise_error(RuntimeError)
+    end
+  end
 end
