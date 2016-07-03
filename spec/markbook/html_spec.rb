@@ -117,7 +117,8 @@ describe MarkBook::HTML do
 
   describe 'listing' do
     context 'lang specified' do
-      # TODO
+      let(:content) { "#listing[lang=ruby]\n  def foo\n    123\n  end\n" }
+      it { is_expected.to eql("<pre><code><span class=\"k\">def</span> <span class=\"nf\">foo</span>\n  <span class=\"mi\">123</span>\n<span class=\"k\">end</span></code></pre>") }
     end
 
     context 'no lang specified' do

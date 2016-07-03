@@ -23,5 +23,6 @@ Gem::Specification.new do |s|
   s.required_ruby_version = '>= 2.2.0'
 
   s.add_runtime_dependency('d-mark', '= 1.0.0a3')
+  s.add_runtime_dependency('rouge', '~> 2.0')
   s.add_development_dependency('bundler', '>= 1.11.2', '< 2.0')
 end

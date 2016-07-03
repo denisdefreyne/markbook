@@ -1,4 +1,5 @@
 require 'd-mark'
+require 'rouge'
 
 require_relative 'markbook/version.rb'
 require_relative 'markbook/html'
