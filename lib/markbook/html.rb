@@ -6,7 +6,7 @@ module MarkBook
 
     def handle_element(element, context)
       case element.name
-      when 'p', 'dt', 'dd', 'ol', 'ul', 'li', 'code', 'kbd', 'blockquote'
+      when 'p', 'dt', 'dd', 'ol', 'ul', 'li', 'code', 'kbd', 'blockquote', 'em'
         wrap(element.name) { handle_children(element, context) }
       when 'dl'
         if element.attributes['compact']
@@ -29,8 +29,6 @@ module MarkBook
       when 'section'
         new_context = context.merge(depth: context.fetch(:depth, 1) + 1)
         wrap('section', id: id_for_section(element)) { handle_children(element, new_context) }
-      when 'em'
-        wrap('em') { handle_children(element, context) }
       when 'firstterm', 'prompt', 'filename'
         wrap('span', class: element.name) { handle_children(element, context) }
       when 'note', 'todo'
