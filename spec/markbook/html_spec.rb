@@ -58,10 +58,14 @@ describe MarkBook::HTML do
 
   describe 'dl' do
     context 'dl[compact]' do
-      # TODO
+      let(:content) { "#dl[compact]\n  #dt Foo\n  #dd Bar" }
+      it { is_expected.to eql('<dl class="compact"><dt>Foo</dt><dd>Bar</dd></dl>') }
     end
 
-    # TODO
+    context 'not compact' do
+      let(:content) { "#dl\n  #dt Foo\n  #dd Bar" }
+      it { is_expected.to eql('<dl><dt>Foo</dt><dd>Bar</dd></dl>') }
+    end
   end
 
   describe 'h and section' do
@@ -107,10 +111,18 @@ describe MarkBook::HTML do
   end
 
   describe 'link' do
-    # TODO
+    let(:content) { '#link[target=http://example.com/] Hello!' }
+    it { is_expected.to eql('<a href="http://example.com/">Hello!</a>') }
   end
 
   describe 'listing' do
-    # TODO
+    context 'lang specified' do
+      # TODO
+    end
+
+    context 'no lang specified' do
+      let(:content) { "#listing\n  def foo\n    123\n  end\n" }
+      it { is_expected.to eql("<pre><code>def foo\n  123\nend</code></pre>") }
+    end
   end
 end
