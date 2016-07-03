@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html lang="en">
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>MarkBook</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,400italic,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Cousine:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="stylesheet.css">
+    <meta name="generator" content="Nanoc 4.2.3">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+  </head>
+  <body>
+    <h1>MarkBook</h1>
+<p><span class="firstterm">MarkBook</span> is a vocabulary for <span class="firstterm">D★Mark</span> for general technical writing.</p>
+<section id="elements"><h2>
+<a href="#elements" class="permalink">#</a>Elements</h2>
+<p>MarkBook is designed to map easily onto elements commonly found in HTML, but also introduces several other elements.</p>
+<section id="elements-inherited-from-html"><h3>
+<a href="#elements-inherited-from-html" class="permalink">#</a>Elements inherited from HTML</h3>
+<p>The following elements are inherited from HTML:</p>
+<dl class="compact">
+<dt><code>p</code></dt>
+<dd>Paragraph.</dd>
+<dt><code>dl</code></dt>
+<dd>Definition list. Can have a <code>compact</code> attribute (without value), which indicates a compact definition list.</dd>
+<dt><code>dt</code></dt>
+<dd>Definition list term.</dd>
+<dt><code>dd</code></dt>
+<dd>Definition list description.</dd>
+<dt><code>ul</code></dt>
+<dd>Unordered list.</dd>
+<dt><code>ol</code></dt>
+<dd>Ordered list.</dd>
+<dt><code>li</code></dt>
+<dd>List item.</dd>
+<dt><code>code</code></dt>
+<dd>Code.</dd>
+<dt><code>em</code></dt>
+<dd>Emphasis.</dd>
+<dt><code>kbd</code></dt>
+<dd>Keyboard input.</dd>
+<dt><code>blockquote</code></dt>
+<dd>Quotation, block form.</dd>
+</dl></section><section id="extra-elements"><h3>
+<a href="#extra-elements" class="permalink">#</a>Extra elements</h3>
+<p>The following elements are not part of HTML:</p>
+<dl class="compact">
+<dt><code>filename</code></dt>
+<dd>
+<p>A filename. This will typically be rendered in monospace, although occasionally italics are used to display fileames. In print, the word-breaking rules will generally be different for filenames, to avoid confusion caused by hyphenation marks. For example:</p>
+<pre><code><span class="nt">#p</span><span class="err"> The file is written to </span><span class="nt">%filename</span><span class="err">{output/about.html}.</span></code></pre>
+</dd>
+<dt><code>firstterm</code></dt>
+<dd>
+<p>First occurrence of a term. Typically styled in italics. For example:</p>
+<pre><code><span class="nt">#p</span><span class="err"> The </span><span class="nt">%firstterm</span><span class="err">{kbd} element indicates keyboard input.</span></code></pre>
+</dd>
+<dt><code>h</code></dt>
+<dd><p>A header, typically found at the start of a document and at the beginnings of sections. See the description of the <code>section</code> element for an example.</p></dd>
+<dt><code>link</code></dt>
+<dd>
+<p>A hyperlink. The <code>target</code> attribute contains the URL of the link target. For example:</p>
+<pre><code><span class="nt">#p</span><span class="err"> For details, see </span><span class="nt">%link</span><span class="err">[target=http://example.com/]{the example site}.</span></code></pre>
+</dd>
+<dt><code>listing</code></dt>
+<dd>
+<p>Source code listing. The <code>lang</code> attribute contains the language of the source code. For example:</p>
+<pre><code><span class="nt">#listing</span><span class="err">[lang=ruby]
+  def fact(n)
+    if n &gt; 1
+      n * fact(n - 1)
+    elsif n == 1
+      1
+    else
+      raise ArgumentError, "Invalid argument: #{n}"
+    end
+  end</span></code></pre>
+</dd>
+<dt><code>prompt</code></dt>
+<dd>
+<p>A prompt, as it appears in terminal output. For example:</p>
+<pre><code><span class="nt">#listing</span><span class="err">
+  </span><span class="nt">%prompt</span><span class="err">{$} </span><span class="nt">%kbd</span><span class="err">{cd lib}
+  </span><span class="nt">%prompt</span><span class="err">{lib$} </span><span class="nt">%kbd</span><span class="err">{pwd}
+  /home/denis/nanoc/lib
+  </span><span class="nt">%prompt</span><span class="err">{lib$}</span></code></pre>
+<p>This could be rendered as follows:</p>
+<pre><code><span class="prompt">$</span> <kbd>cd lib</kbd>
+<span class="prompt">lib$</span> <kbd>pwd</kbd>
+/home/denis/nanoc/lib
+<span class="prompt">lib$</span></code></pre>
+</dd>
+<dt><code>section</code></dt>
+<dd>
+<p>A section. This is intended to start with a header element (<code>h</code>). For example, the following code sample contains two nested sections:</p>
+<pre><code><span class="nt">#section</span><span class="err"> </span><span class="nt">%h</span><span class="err">{Use cases}
+</span><span class="nt">  #p</span><span class="err"> General introduction to use cases goes here.
+
+</span><span class="nt">  #section</span><span class="err"> </span><span class="nt">%h</span><span class="err">{Use case 1: first term}
+</span><span class="nt">    #p</span><span class="err"> Use case details go here.</span></code></pre>
+</dd>
+</dl>
+<div class="todo">This section is incomplete.</div></section></section>
+  </body>
+</html>
