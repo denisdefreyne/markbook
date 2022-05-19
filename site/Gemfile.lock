@@ -3,6 +3,7 @@ PATH
   specs:
     markbook (0.1)
       d-mark (= 1.0.0a3)
+      rouge (~> 2.0)
 
 GEM
   remote: https://rubygems.org/
@@ -16,16 +17,16 @@ GEM
     d-mark (1.0.0a3)
     hamster (3.0.0)
       concurrent-ruby (~> 1.0)
-    mini_portile2 (2.1.0)
+    mini_portile2 (2.8.0)
     nanoc (4.2.3)
       cri (~> 2.3)
       hamster (~> 3.0)
     nanoc-git (1.0.1)
       nanoc (>= 3.7.0, < 5.0.0)
-    nokogiri (1.6.8)
-      mini_portile2 (~> 2.1.0)
-      pkg-config (~> 1.1.7)
-    pkg-config (1.1.7)
+    nokogiri (1.13.5)
+      mini_portile2 (~> 2.8.0)
+      racc (~> 1.4)
+    racc (1.6.0)
     rack (2.0.1)
     rouge (2.0.2)
 
